@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<!-- Register the analyzerconfig files to the project -->
+	<ItemGroup>
+		<GlobalAnalyzerConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\*.analyzerconfig" />
+	</ItemGroup>
+
+	<!-- Banned Symbols -->
+	<PropertyGroup>
+		<IncludeDefaultBannedSymbols Condition="$(IncludeDefaultBannedSymbols) == ''">true</IncludeDefaultBannedSymbols>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<AdditionalFiles
+			Include="$(MSBuildThisFileDirectory)/../files/BannedSymbols.txt"
+			Condition="$(IncludeDefaultBannedSymbols) == 'true'"
+			Visible="false"
+		/>
+	</ItemGroup>
+
+	<!-- Reference is added in nuspec file. -->
+	<!-- <ItemGroup Condition=" '$(DisableNullableExtendedAnalyzer)' != 'true' ">
+		<PackageReference Include="Nullable.Extended.Analyzer" Version="1.10.4539">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+	</ItemGroup> -->
+
+</Project>
