@@ -3,7 +3,7 @@
 
 	<!-- Register the analyzerconfig files to the project -->
 	<ItemGroup>
-		<GlobalAnalyzerConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\*.analyzerconfig" />
+		<GlobalAnalyzerConfigFiles Include="$(SourcesRootPath)/files/*.analyzerconfig" />
 	</ItemGroup>
 
 	<!-- Banned Symbols -->
@@ -13,7 +13,7 @@
 
 	<ItemGroup>
 		<AdditionalFiles
-			Include="$(MSBuildThisFileDirectory)/../files/BannedSymbols.txt"
+			Include="$(SourcesRootPath)/files/BannedSymbols.txt"
 			Condition="$(IncludeDefaultBannedSymbols) == 'true'"
 			Visible="false"
 		/>

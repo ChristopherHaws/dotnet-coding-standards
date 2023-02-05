@@ -38,6 +38,7 @@ This repo is a place for me to keep all my shared configuration between projects
 - [ ] - Add logging to log changed features (toggleable)
 - [ ] - Add the ability to build containers via `EnableSdkContainerSupport`
 - [ ] - Look into if it is possible to detect installed packages and enable/disable features based on that
+- [ ] - Add tests to validate that everything works (could use [Buildalyzer](https://www.nuget.org/packages/Buildalyzer/))
 
 
 ## Features

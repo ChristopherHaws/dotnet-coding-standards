@@ -11,7 +11,7 @@
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 	</PropertyGroup>
 
-	<PropertyGroup Label="WarningsAsErrors" Condition=" '$(CI)' == 'true' ">
+	<PropertyGroup Label="WarningsAsErrors" Condition=" '$(ContinuousIntegrationBuild)' == 'true' ">
 		<NoWarn>$(NoWarn);0618</NoWarn>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>

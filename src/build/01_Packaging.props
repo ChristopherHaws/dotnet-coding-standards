@@ -19,9 +19,22 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
-	<ItemGroup Label="Packaging">
-		<None Include="$([System.IO.Path]::Combine($(MSBuildThisFileDirectory), 'LICENSE.txt'))" Pack="true" PackagePath="\" Visible="false" />
-		<None Include="$([System.IO.Path]::Combine($(MSBuildThisFileDirectory), 'README.md'))" Pack="true" PackagePath="\" Visible="false" />
+	<ItemGroup Label="PackageLicenseAndReadmeFiles">
+		<None
+			Include="$([System.IO.Path]::Combine($(SolutionDir), '$(PackageLicenseFile)'))"
+			Condition="EXISTS($([System.IO.Path]::Combine($(SolutionDir), '$(PackageLicenseFile)')))"
+			Pack="true"
+			PackagePath="\"
+			Visible="false"
+		/>
+
+		<None
+			Include="$([System.IO.Path]::Combine($(SolutionDir), '$(PackageReadmeFile)'))"
+			Condition="EXISTS($([System.IO.Path]::Combine($(SolutionDir), '$(PackageReadmeFile)')))"
+			Pack="true"
+			PackagePath="\"
+			Visible="false"
+		/>
 	</ItemGroup>
 
 </Project>

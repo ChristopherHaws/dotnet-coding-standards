@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-	<Import Project="$(MSBuildThisFileDirectory)/00_Compiler.targets" />
-	<Import Project="$(MSBuildThisFileDirectory)/10_Analyzers.targets" Condition="'$(Language)'=='C#'" />
-	<Import Project="$(MSBuildThisFileDirectory)/80_JetBrains.targets" />
+	<Import Project="$(SourcesRootPath)/build/00_Compiler.targets" />
+	<Import Project="$(SourcesRootPath)/build/10_Analyzers.targets" Condition="'$(Language)'=='C#'" />
+	<Import Project="$(SourcesRootPath)/build/80_JetBrains.targets" />
 
 </Project>
