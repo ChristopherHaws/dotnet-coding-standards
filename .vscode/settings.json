@@ -1,0 +1,33 @@
+{
+	"files.associations": {
+		"*.props": "msbuild",
+		"*.targets": "msbuild",
+		"*.*proj": "msbuild",
+		"*.tasks": "msbuild",
+		"*.nuspec": "xml",
+		"*.analyzerconfig": "editorconfig"
+	},
+	// https://github.com/NuGet/docs.microsoft.com-nuget/issues/2195#issuecomment-1416878200
+	// https://github.com/NuGet/NuGet.Client/blob/dev/src/NuGet.Core/NuGet.Packaging/PackageCreation/Authoring/ManifestSchemaUtility.cs#L50
+	// "xml.fileAssociations": [
+	// 	{
+	// 		"pattern": "**/*.nuspec",
+	// 		"systemId": "http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd"
+	// 		//"systemId": "https://schemas.microsoft.com/packaging/2013/05/nuspec.xsd"
+	// 		//"systemId": "https://raw.githubusercontent.com/NuGet/NuGet.Client/dev/src/NuGet.Core/NuGet.Packaging/compiler/resources/nuspec.xsd"
+	// 	}
+	// ],
+	"yaml.schemas": {
+		"https://json.schemastore.org/github-workflow.json": "/.github/workflows/*.yml",
+	},
+	"msbuildProjectTools.language.completionsFromProject": [
+		"ItemType",
+		"ItemMetadata",
+		"Property",
+		"Target",
+		"Task"
+	],
+	"msbuildProjectTools.nuget.includePreRelease": true,
+	"msbuildProjectTools.nuget.includeLocalSources": true,
+	"xml.validation.resolveExternalEntities": true
+}

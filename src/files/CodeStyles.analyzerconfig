@@ -1,0 +1,39 @@
+# noinspection EditorConfigKeyCorrectness
+# https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/configuration-files#precedence
+# https://github.com/meziantou/Meziantou.DotNet.CodingStandard/blob/main/src/configuration/NamingConvention.editorconfig
+is_global = true
+global_level = 0
+
+charset = utf-8
+end_of_line = lf
+indent_size = tab
+indent_style = tab
+tab_width = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# .NET Analyzer Settings
+# https://learn.microsoft.com/en-us/visualstudio/code-quality/use-roslyn-analyzers?view=vs-2022
+csharp_new_line_before_catch = false
+csharp_new_line_before_else = false
+csharp_new_line_before_finally = false
+csharp_new_line_before_members_in_object_initializers = false
+csharp_new_line_before_open_brace = none
+# noinspection EditorConfigValueCorrectness
+csharp_preferred_modifier_order = public, private, protected, internal, file, new, static, abstract, virtual, sealed, readonly, override, extern, unsafe, volatile, async, required:suggestion
+csharp_space_after_cast = true
+csharp_style_prefer_utf8_string_literals = true:suggestion
+csharp_style_var_elsewhere = true:suggestion
+csharp_style_var_for_built_in_types = true:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+
+dotnet_style_parentheses_in_arithmetic_binary_operators = never_if_unnecessary:none
+dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:none
+dotnet_style_parentheses_in_relational_binary_operators = never_if_unnecessary:none
+dotnet_style_predefined_type_for_locals_parameters_members = true:suggestion
+dotnet_style_predefined_type_for_member_access = true:suggestion
+dotnet_style_qualification_for_event = false:suggestion
+dotnet_style_qualification_for_field = false:suggestion
+dotnet_style_qualification_for_method = false:suggestion
+dotnet_style_qualification_for_property = false:suggestion
+dotnet_style_require_accessibility_modifiers = never:suggestion

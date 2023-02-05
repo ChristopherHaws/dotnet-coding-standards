@@ -1,0 +1,7 @@
+{
+	"recommendations": [
+		"tintoy.msbuild-project-tools",
+		"redhat.vscode-xml",
+		"cschleiden.vscode-github-actions"
+	]
+}

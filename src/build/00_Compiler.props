@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<!-- https://github.com/dotnet/reproducible-builds/tree/main/Documentation/Reproducible-MSBuild/Techniques/toc.md -->
+	<Import Sdk="DotNet.ReproducibleBuilds.Isolated" Project="Sdk.props" Version="1.1.1" />
+
+	<PropertyGroup Label="LanguageFeatures">
+		<!-- https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/language -->
+		<LangVersion>latest</LangVersion>
+		<Deterministic>true</Deterministic>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>true</ImplicitUsings>
+		<Features>strict</Features>
+		<!-- TODO: Reenable prior to a 1.0 release -->
+		<!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
+	</PropertyGroup>
+
+	<ItemGroup Label="CLSCompliance">
+		<AssemblyAttribute Include="System.CLSCompliantAttribute">
+			<_Parameter1>true</_Parameter1>
+		</AssemblyAttribute>
+		<AssemblyAttribute Include="System.Runtime.InteropServices.ComVisibleAttribute">
+			<_Parameter1>false</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<!--
+	It is expected that all developers using Fody become a Patron on OpenCollective:
+		https://opencollective.com/fody/contribute/patron-3059
+	See Licensing/Patron FAQ for more information.
+		https://github.com/Fody/Home/blob/master/pages/licensing-patron-faq.md
+	-->
+	<PropertyGroup Label="FodyWeavers">
+		<WeaverConfiguration>
+			<Weavers VerifyAssembly="true">
+				<ConfigureAwait />
+				<NullGuard Mode="NullableReferenceTypes" />
+			</Weavers>
+		</WeaverConfiguration>
+	</PropertyGroup>
+
+	<ItemGroup Label="FodyWeavers">
+		<PackageReference Include="Fody" Version="6.6.4" PrivateAssets="all" />
+		<PackageReference Include="ConfigureAwait.Fody" Version="3.3.2" PrivateAssets="all" />
+		<PackageReference Include="NullGuard.Fody" Version="3.1.1" PrivateAssets="all" />
+		<AssemblyAttribute Include="Fody.ConfigureAwaitAttribute">
+			<_Parameter1>False</_Parameter1>
+			<_Parameter1_TypeName>System.Boolean</_Parameter1_TypeName>
+		</AssemblyAttribute>
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup Label="DateTimeProperties">
+		<Year>$([System.DateTime]::Now.ToString(yyyy))</Year>
+		<DayOfYear>$([System.DateTime]::Now.DayOfYear.ToString(000))</DayOfYear>
+		<Month>$([System.DateTime]::Now.ToString(MM))</Month>
+		<Day>$([System.DateTime]::Now.ToString(dd))</Day>
+		<TimeOfDay>$([System.DateTime]::Now.ToString(HHmm))</TimeOfDay>
+	</PropertyGroup>
+
+	<PropertyGroup Label="Packaging">
+		<Copyright>Copyright $(Year) $(CopyrightHolder)</Copyright>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl Condition=" '$(REPOSITORY_URL)' != '' ">$(REPOSITORY_URL)</RepositoryUrl>
+		<PackageProjectUrl Condition=" '$(PROJECT_URL)' != '' ">$(PROJECT_URL)</PackageProjectUrl>
+		<NeutralLanguage>en</NeutralLanguage>
+		<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup Label="Packaging">
+		<None Include="$([System.IO.Path]::Combine($(MSBuildThisFileDirectory), 'LICENSE.txt'))" Pack="true" PackagePath="\" Visible="false" />
+		<None Include="$([System.IO.Path]::Combine($(MSBuildThisFileDirectory), 'README.md'))" Pack="true" PackagePath="\" Visible="false" />
+	</ItemGroup>
+
+</Project>

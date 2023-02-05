@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup Label="CodeAnalysis">
+		<!-- https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#analysislevel -->
+		<!-- https://docs.microsoft.com/en-us/visualstudio/code-quality/migrate-from-fxcop-analyzers-to-net-analyzers?view=vs-2019 -->
+		<AnalysisLevel Condition=" '$(AnalysisLevel)' == '' ">preview</AnalysisLevel>
+		<!-- https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props#analysismode -->
+		<AnalysisMode>All</AnalysisMode>
+		<ReportAnalyzer>true</ReportAnalyzer>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+	</PropertyGroup>
+
+	<PropertyGroup Label="WarningsAsErrors" Condition=" '$(CI)' == 'true' ">
+		<NoWarn>$(NoWarn);0618</NoWarn>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+	</PropertyGroup>
+
+</Project>

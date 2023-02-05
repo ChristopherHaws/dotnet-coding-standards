@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<ItemGroup Label="Versioning" Condition="'$(CI)' == 'true'">
+		<!-- https://github.com/adamralph/minver -->
+		<PackageReference Include="MinVer" Version="4.3.0" PrivateAssets="All"/>
+		<!-- <PackageReference Include="Nerdbank.GitVersioning" Version="3.4.255" PrivateAssets="All"/> -->
+	</ItemGroup>
+
+	<PropertyGroup Label="Versioning">
+		<MinVerSkip Condition="'$(CI)' != 'true'">true</MinVerSkip>
+		<MinVerDefaultPreReleaseIdentifiers>preview.0</MinVerDefaultPreReleaseIdentifiers>
+	</PropertyGroup>
+
+</Project>

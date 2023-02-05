@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+
+	<!-- https://learn.microsoft.com/en-us/nuget/reference/nuspec -->
+	<metadata>
+		<id>Chaws.DotNet.CodingStandards</id>
+		<version>$version$</version>
+		<authors>christopher.haws</authors>
+		<developmentDependency>true</developmentDependency>
+		<license type="file">LICENSE.txt</license>
+		<readme>README.md</readme>
+		<icon>icon.png</icon>
+		<projectUrl>https://github.com/christopherhaws/dotnet-coding-standards</projectUrl>
+		<description>Opinionated .NET coding styles and static analysis settings for my projects.</description>
+
+		<!-- These values get set by the CI workflow -->
+		<repository
+			type="git"
+			url="$RepositoryUrl$"
+			commit="$RepositoryCommit$"
+			branch="$RepositoryBranch$"
+		/>
+
+		<dependencies>
+			<!--
+			<dependency id="DotNet.ReproducibleBuilds" version="1.1.1" />
+			<dependency id="DotNet.ReproducibleBuilds.Isolated" version="1.1.1" />
+			-->
+
+			<dependency id="Microsoft.VisualStudio.Threading.Analyzers" version="17.5.22" />
+			<dependency id="Microsoft.CodeAnalysis.PublicApiAnalyzers" version="3.3.4" />
+			<dependency id="Microsoft.CodeAnalysis.BannedApiAnalyzers" version="3.3.4" />
+			<dependency id="Microsoft.CodeAnalysis.NetAnalyzers" version="7.0.0" />
+			<dependency id="Meziantou.Analyzer" version="2.0.14" />
+			<dependency id="Nullable.Extended.Analyzer" version="1.10.4539" />
+
+			<!--
+				List: http://pihrt.net/Roslynator/Analyzers
+				GitHub: https://github.com/josefpihrt/roslynator
+				NuGet: https://www.nuget.org/packages/Roslynator.Analyzers
+				<dependency id="Roslynator.Analyzers" version="4.2.0" />
+				<dependency id="Roslynator.CodeAnalysis.Analyzers" version="4.2.0" />
+				<dependency id="Roslynator.Formatting.Analyzers" version="4.2.0" />
+			-->
+		</dependencies>
+	</metadata>
+
+	<!-- Add props / targets / editorconfig files to the package -->
+	<files>
+		<file src="src\**" target="" />
+		<file src="LICENSE.txt" target="" />
+		<file src="icon.png" target="" />
+		<file src="README.md" target="" />
+	</files>
+
+</package>
