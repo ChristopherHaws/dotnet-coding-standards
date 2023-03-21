@@ -37,14 +37,14 @@ jobs:
           {
             $NewVersion = "1.0.0"
           }
-          
+
           Write-Host "New version: $NewVersion"
           Write-Host "::set-output name=package_version::$NewVersion"
         name: Compute version
         id: compute-version
 
       - run: nuget pack Chaws.DotNet.CodingStandards.nuspec -ForceEnglishOutput -Version ${{ steps.compute-version.outputs.package_version }} -Properties "RepositoryCommit=${{ github.sha }};RepositoryBranch=${{ github.ref_name }};RepositoryUrl=${{ github.repositoryUrl }}"
-      
+
       - uses: actions/upload-artifact@v3
         with:
           name: nuget
@@ -71,7 +71,7 @@ jobs:
               Write-Host "Pushing NuGet package: $($file.FullName)"
               if ($env:GITHUB_REF -eq 'refs/heads/main')
               {
-                & dotnet nuget push "$($file.FullName)" --api-key "$env:NuGetApiKey" --source https://api.nuget.org/v3/index.json --force-english-output --skip-duplicate
+                & dotnet nuget push "$($file.FullName)" --force-english-output --skip-duplicate --source https://api.nuget.org/v3/index.json --api-key "$env:NUGET_API_KEY"
               }
               else
               {
@@ -81,4 +81,4 @@ jobs:
         name: Publish NuGet packages
         if: always()
         env:
-          NuGetApiKey: ${{ secrets.NuGetApiKey }}
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
